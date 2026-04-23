@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transporte Ejecutivo y Turístico en México | Marmotour</title>
+<meta name="description" content="Transporte ejecutivo privado, traslados al aeropuerto, turismo y más. Cotiza en minutos por WhatsApp. GPS, conductores certificados, toda la República Mexicana.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0A0A0A;
+    --charcoal: #1C1C1C;
+    --charcoal-mid: #252525;
+    --charcoal-light: #2E2E2E;
+    --gold: #C9A84C;
+    --gold-light: #E2C97E;
+    --gold-pale: #f0dfa0;
+    --off-white: #F5F3EE;
+    --text-muted: #888888;
+    --text-mid: #BBBBBB;
+    --wa-green: #25D366;
+    --wa-green-dark: #1DA851;
+    --border: rgba(201,168,76,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--black);
+    color: var(--off-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── STICKY NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 40px;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: padding 0.3s;
+  }
+
+  nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  nav .logo-mark {
+    width: 36px; height: 36px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  nav .logo-text {
+    display: flex; flex-direction: column; line-height: 1.1;
+  }
+  nav .logo-name {
+    font-size: 15px; font-weight: 700; color: var(--off-white); letter-spacing: 0.04em;
+  }
+  nav .logo-sub {
+    font-size: 8px; font-weight: 400; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase;
+  }
+
+  nav .nav-cta {
+    display: flex; align-items: center; gap: 12px;
+  }
+  nav .nav-phone {
+    color: var(--text-mid); font-size: 13px; text-decoration: none; font-weight: 500;
+    display: none;
+  }
+  .btn-wa-nav {
+    display: flex; align-items: center; gap: 7px;
+    background: var(--wa-green);
+    color: #fff;
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+  .btn-wa-nav:hover { background: var(--wa-green-dark); transform: translateY(-1px); }
+  .btn-wa-nav svg { flex-shrink: 0; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 40px 80px;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: 
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 80% at 10% 30%, rgba(201,168,76,0.04) 0%, transparent 50%),
+      linear-gradient(160deg, #0A0A0A 0%, #141410 50%, #0A0A0A 100%);
+  }
+
+  /* Grid texture */
+  .hero-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: 
+      linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero-badge span { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 62px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 22px;
+    color: var(--off-white);
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-pale) 60%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--text-mid);
+    font-weight: 400;
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+
+  .hero-sub strong { color: var(--off-white); font-weight: 600; }
+
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 44px;
+  }
+
+  .btn-wa-hero {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--wa-green);
+    color: #fff;
+    padding: 16px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow: 0 4px 24px rgba(37,211,102,0.3);
+  }
+  .btn-wa-hero:hover {
+    background: var(--wa-green-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(37,211,102,0.4);
+  }
+
+  .btn-form-hero {
+    display: flex; align-items: center; gap: 10px;
+    background: transparent;
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold-light);
+    padding: 16px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+  }
+  .btn-form-hero:hover {
+    background: rgba(201,168,76,0.08);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+  }
+
+  .hero-trust {
+    display: flex; gap: 28px; flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: var(--text-muted); font-weight: 500;
+  }
+  .trust-item svg { color: var(--gold); flex-shrink: 0; }
+
+  /* ── HERO FORM CARD ── */
+  .hero-card {
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 32px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,168,76,0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+
+  .card-title {
+    font-size: 18px; font-weight: 700; margin-bottom: 6px; color: var(--off-white);
+  }
+  .card-sub {
+    font-size: 12px; color: var(--text-muted); margin-bottom: 24px; font-weight: 400;
+  }
+
+  .form-group { margin-bottom: 14px; }
+
+  .form-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    background: var(--charcoal-light);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--off-white);
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: var(--text-muted); }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    background: rgba(46,46,46,0.8);
+  }
+  .form-group select option { background: var(--charcoal); }
+  .form-group textarea { resize: vertical; min-height: 70px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .btn-submit {
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--black);
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+    margin-top: 6px;
+  }
+  .btn-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(201,168,76,0.4);
+  }
+
+  .card-wa-alt {
+    text-align: center; margin-top: 16px; font-size: 12px; color: var(--text-muted);
+  }
+  .card-wa-alt a {
+    color: var(--wa-green); font-weight: 600; text-decoration: none;
+  }
+  .card-wa-alt a:hover { text-decoration: underline; }
+
+  /* ── SERVICES ── */
+  .section { max-width: 1200px; margin: 0 auto; padding: 100px 40px; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    color: var(--off-white);
+  }
+
+  .section-title em {
+    font-style: normal;
+    color: var(--gold-light);
+  }
+
+  .section-desc {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 56px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .service-card {
+    background: var(--charcoal);
+    padding: 36px 28px;
+    transition: background 0.25s;
+    cursor: default;
+  }
+  .service-card:hover { background: var(--charcoal-light); }
+
+  .service-icon {
+    width: 52px; height: 52px;
+    background: rgba(201,168,76,0.1);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    transition: background 0.25s;
+  }
+  .service-card:hover .service-icon { background: rgba(201,168,76,0.18); }
+
+  .service-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--off-white);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .service-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .service-tag {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 100px;
+    padding: 3px 10px;
+  }
+
+  /* ── TRUST SECTION ── */
+  .trust-section {
+    background: var(--charcoal);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .trust-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .trust-left {}
+
+  .trust-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .stat-item {}
+
+  .stat-num {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--gold);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label { font-size: 13px; color: var(--text-muted); font-weight: 500; line-height: 1.4; }
+
+  .trust-features {
+    display: flex; flex-direction: column; gap: 20px;
+  }
+
+  .feature-row {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 20px;
+    background: rgba(201,168,76,0.04);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: background 0.2s;
+  }
+  .feature-row:hover { background: rgba(201,168,76,0.07); }
+
+  .feature-icon {
+    width: 44px; height: 44px;
+    background: rgba(201,168,76,0.12);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 20px;
+  }
+
+  .feature-row h4 { font-size: 14px; font-weight: 700; color: var(--off-white); margin-bottom: 4px; }
+  .feature-row p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+  /* ── HOW IT WORKS ── */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    position: relative;
+  }
+
+  .steps-grid::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: calc(16.66% + 15px);
+    right: calc(16.66% + 15px);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .step-item {
+    text-align: center;
+    padding: 0 32px;
+    position: relative;
+  }
+
+  .step-num {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: var(--charcoal);
+    border: 2px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--gold);
+    margin: 0 auto 24px;
+    position: relative; z-index: 1;
+  }
+
+  .step-item h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; color: var(--off-white); }
+  .step-item p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  /* ── CTA BAND ── */
+  .cta-band {
+    background: linear-gradient(135deg, #0e0c07 0%, #1a1506 50%, #0e0c07 100%);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-band::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 100% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);
+  }
+
+  .cta-band-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative; z-index: 1;
+  }
+
+  .cta-band h2 {
+    font-size: clamp(24px, 3vw, 38px);
+    font-weight: 800;
+    line-height: 1.2;
+    max-width: 580px;
+  }
+
+  .cta-band h2 em { font-style: normal; color: var(--gold-light); }
+
+  .cta-buttons {
+    display: flex; gap: 14px; flex-shrink: 0; flex-wrap: wrap;
+  }
+
+  .btn-wa-cta {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--wa-green);
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+    white-space: nowrap;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+  }
+  .btn-wa-cta:hover { background: var(--wa-green-dark); transform: translateY(-2px); }
+
+  .btn-call-cta {
+    display: flex; align-items: center; gap: 10px;
+    background: transparent;
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold-light);
+    padding: 16px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .btn-call-cta:hover { background: rgba(201,168,76,0.08); border-color: var(--gold); }
+
+  /* ── FORM SECTION ── */
+  .form-section {
+    background: var(--charcoal-mid);
+  }
+
+  .form-section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 40px;
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .form-info h2 {
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+  }
+  .form-info h2 em { font-style: normal; color: var(--gold-light); }
+  .form-info p { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 40px; }
+
+  .contact-items { display: flex; flex-direction: column; gap: 16px; }
+  .contact-item {
+    display: flex; align-items: center; gap: 14px;
+    font-size: 14px; color: var(--text-mid);
+  }
+  .contact-item a { color: var(--text-mid); text-decoration: none; }
+  .contact-item a:hover { color: var(--gold-light); }
+  .contact-dot {
+    width: 36px; height: 36px;
+    background: rgba(201,168,76,0.1);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 16px;
+  }
+
+  .form-card-big {
+    background: var(--charcoal);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .form-card-big::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+
+  .form-card-big .card-title { font-size: 20px; margin-bottom: 4px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    border-top: 1px solid var(--border);
+    padding: 48px 40px;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .footer-brand { display: flex; align-items: center; gap: 10px; }
+  .footer-logo-mark {
+    width: 32px; height: 32px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .footer-name { font-size: 14px; font-weight: 700; color: var(--off-white); }
+  .footer-tagline { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-links a { font-size: 12px; color: var(--text-muted); text-decoration: none; }
+  .footer-links a:hover { color: var(--gold-light); }
+
+  .footer-copy { font-size: 11px; color: var(--text-muted); }
+
+  /* ── STICKY WA BUTTON ── */
+  .sticky-wa {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: var(--wa-green);
+    border-radius: 50px;
+    box-shadow: 0 6px 32px rgba(37,211,102,0.45);
+    text-decoration: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    max-width: 60px;
+  }
+
+  .sticky-wa:hover {
+    max-width: 220px;
+    box-shadow: 0 8px 40px rgba(37,211,102,0.55);
+  }
+
+  .sticky-wa-icon {
+    width: 60px; height: 60px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .sticky-wa-text {
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    white-space: nowrap;
+    padding-right: 20px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .sticky-wa:hover .sticky-wa-text { opacity: 1; }
+
+  /* ── SUCCESS MESSAGE ── */
+  .success-msg {
+    display: none;
+    background: rgba(37,211,102,0.1);
+    border: 1px solid rgba(37,211,102,0.3);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    color: var(--wa-green);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .hero-content { grid-template-columns: 1fr; gap: 48px; }
+    .hero-card { max-width: 540px; }
+    .trust-inner { grid-template-columns: 1fr; gap: 48px; }
+    .form-section-inner { grid-template-columns: 1fr; gap: 48px; }
+    .form-card-big { max-width: 540px; }
+    .cta-band-inner { flex-direction: column; text-align: center; }
+    nav .nav-phone { display: block; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 12px 20px; }
+    .hero { padding: 100px 20px 60px; }
+    .section { padding: 70px 20px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: 1fr; gap: 40px; }
+    .steps-grid::after { display: none; }
+    .trust-stats { grid-template-columns: 1fr 1fr; }
+    .cta-band-inner { padding: 60px 20px; }
+    .cta-buttons { flex-direction: column; width: 100%; }
+    .btn-wa-cta, .btn-call-cta { justify-content: center; }
+    .trust-inner { padding: 60px 20px; }
+    .form-section-inner { padding: 70px 20px; }
+    footer { padding: 40px 20px; }
+    .footer-inner { flex-direction: column; gap: 24px; text-align: center; }
+    .form-row { grid-template-columns: 1fr; }
+    nav .nav-phone { display: none; }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-badge { animation: fadeUp 0.5s ease both; }
+  .hero h1 { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-sub { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-ctas { animation: fadeUp 0.6s 0.3s ease both; }
+  .hero-trust { animation: fadeUp 0.6s 0.4s ease both; }
+  .hero-card { animation: fadeUp 0.7s 0.2s ease both; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-mark">🦫</div>
+    <div class="logo-text">
+      <span class="logo-name">Marmotour</span>
+      <span class="logo-sub">Luxury Private Transportation</span>
+    </div>
+  </a>
+  <div class="nav-cta">
+    <a href="tel:+525534183298" class="nav-phone">55 3418 3298</a>
+    <a href="https://wa.me/525534183298?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20un%20servicio%20de%20transporte." 
+       class="btn-wa-nav" target="_blank" rel="noopener">
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Cotizar por WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span></span>
+        Transporte ejecutivo en toda la República
+      </div>
+      <h1>Tu traslado,<br><em>sin complicaciones.</em><br>Con quien confías.</h1>
+      <p class="hero-sub">
+        Aeropuerto, eventos corporativos, turismo o maratones — en Marmotour 
+        diseñamos el servicio a tu medida. <strong>Conductores certificados, 
+        GPS en tiempo real y puntualidad garantizada.</strong>
+      </p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/525534183298?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20un%20servicio%20de%20transporte." 
+           class="btn-wa-hero" target="_blank" rel="noopener">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Cotizar por WhatsApp
+        </a>
+        <button class="btn-form-hero" onclick="document.getElementById('cotizacion').scrollIntoView({behavior:'smooth'})">
+          Llenar formulario
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12z"/><path d="M10 6a1 1 0 011 1v3.586l2.707 2.707a1 1 0 01-1.414 1.414l-3-3A1 1 0 019 11V7a1 1 0 011-1z"/></svg>
+          Disponible todos los días
+        </div>
+        <div class="trust-item">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
+          GPS en tiempo real
+        </div>
+        <div class="trust-item">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          Empresa formalmente constituida
+        </div>
+        <div class="trust-item">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20"><path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"/></svg>
+          Conductores certificados
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO CARD -->
+    <div class="hero-card" id="cotiza-rapido">
+      <div class="card-title">Cotiza tu servicio</div>
+      <p class="card-sub">Te respondemos en menos de 30 minutos</p>
+      <form id="heroForm" onsubmit="submitForm(event, 'heroSuccess')">
+        <div class="form-group">
+          <label>Nombre completo</label>
+          <input type="text" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" placeholder="55 0000 0000" required>
+          </div>
+          <div class="form-group">
+            <label>Servicio</label>
+            <select required>
+              <option value="" disabled selected>Selecciona</option>
+              <option>Traslado aeropuerto</option>
+              <option>Transporte ejecutivo</option>
+              <option>Turismo / Escapada</option>
+              <option>Concierto / Evento</option>
+              <option>Servicio corporativo</option>
+              <option>Maratón / Deporte</option>
+              <option>Otro</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>¿A dónde necesitas ir? (opcional)</label>
+          <input type="text" placeholder="Ej. AICM, Puebla, Querétaro…">
+        </div>
+        <button type="submit" class="btn-submit">
+          Solicitar cotización →
+        </button>
+        <div class="success-msg" id="heroSuccess">
+          ✓ ¡Listo! Nos pondremos en contacto muy pronto.
+        </div>
+      </form>
+      <div class="card-wa-alt">
+        ¿Prefieres escribirnos directo? 
+        <a href="https://wa.me/525534183298?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20un%20servicio%20de%20transporte." target="_blank">
+          Escríbenos por WhatsApp →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section style="background: var(--charcoal-mid);">
+  <div class="section">
+    <div class="section-label">Nuestros Servicios</div>
+    <h2 class="section-title">Un solo proveedor para<br><em>todas tus necesidades</em> de transporte</h2>
+    <p class="section-desc">Desde un traslado al aeropuerto hasta logística completa para eventos corporativos. Si necesitas moverte, Marmotour tiene el servicio.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">✈️</div>
+        <h3>Traslados al Aeropuerto</h3>
+        <p>AICM y AIFA. Monitoreo de vuelos, ajuste de horarios ante retrasos, y conductor esperándote en la sala de llegadas.</p>
+        <span class="service-tag">AICM · AIFA</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💼</div>
+        <h3>Transporte Ejecutivo</h3>
+        <p>Para directivos, embajadas, consulados y personal VIP. Discreción total, puntualidad y coordinación con tu agenda.</p>
+        <span class="service-tag">B2B · Corporativo</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏛️</div>
+        <h3>Instituciones y Gobierno</h3>
+        <p>Proveedor de transporte para dependencias públicas, embajadas y organismos gubernamentales. Facturación fiscal incluida.</p>
+        <span class="service-tag">Factura incluida</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🗺️</div>
+        <h3>Turismo y Escapadas</h3>
+        <p>Pueblos Mágicos, zonas arqueológicas, ciudades coloniales y playas. Itinerario personalizado, sin escalas ni esperas.</p>
+        <span class="service-tag">República Mexicana</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎵</div>
+        <h3>Conciertos y Eventos</h3>
+        <p>Llega y regresa sin estacionamiento ni tráfico. Coordinamos grupos para conciertos, festivales y eventos especiales en CDMX.</p>
+        <span class="service-tag">Grupos · Eventos</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏃</div>
+        <h3>Servicio "Barredora"</h3>
+        <p>Apoyo logístico para corredores y equipos en maratones. Recogida en puntos de parada, traslado de equipo y logística del evento.</p>
+        <span class="service-tag">Deportes · Running</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-section">
+  <div class="trust-inner">
+    <div class="trust-left">
+      <div class="section-label">¿Por qué Marmotour?</div>
+      <h2 class="section-title">Tecnología y<br><em>protocolos</em> que<br>te dan tranquilidad</h2>
+      <div class="trust-stats">
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Unidades con GPS activo en cada viaje</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">24/7</div>
+          <div class="stat-label">Coordinación en tiempo real con central de operaciones</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">MX</div>
+          <div class="stat-label">Cobertura en toda la República Mexicana</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">0</div>
+          <div class="stat-label">Sorpresas — precio acordado antes del viaje</div>
+        </div>
+      </div>
+    </div>
+    <div class="trust-features">
+      <div class="feature-row">
+        <div class="feature-icon">📡</div>
+        <div>
+          <h4>Monitoreo GPS en tiempo real</h4>
+          <p>Cada unidad transmite su ubicación durante todo el trayecto. Seguimiento constante para tu seguridad.</p>
+        </div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-icon">📹</div>
+        <div>
+          <h4>Dash cams en todas las unidades</h4>
+          <p>Cámaras de tablero que registran el recorrido completo. Evidencia ante cualquier eventualidad.</p>
+        </div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-icon">🔧</div>
+        <div>
+          <h4>Mantenimiento preventivo antes de cada servicio</h4>
+          <p>Unidades revisadas mecánicamente antes de cada viaje para garantizar condiciones óptimas.</p>
+        </div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-icon">🧑‍✈️</div>
+        <div>
+          <h4>Conductores capacitados y verificados</h4>
+          <p>Entrenados en transporte ejecutivo y turístico. Conocen rutas principales y alternas en toda la república.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="section">
+    <div style="text-align:center; margin-bottom: 56px;">
+      <div class="section-label" style="text-align:center;">Proceso</div>
+      <h2 class="section-title" style="text-align:center;">¿Cómo funciona?</h2>
+      <p class="section-desc" style="margin: 0 auto; text-align:center;">Tres pasos y listo. Sin complicaciones.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <h3>Nos dices qué necesitas</h3>
+        <p>Escríbenos por WhatsApp o llena el formulario. Cuéntanos tu destino, fecha, número de personas y el tipo de servicio.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <h3>Te enviamos la cotización</h3>
+        <p>En menos de 30 minutos recibes precio exacto, sin letras chiquitas. Confirmamos disponibilidad al instante.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <h3>Nosotros te llevamos</h3>
+        <p>Conductor puntual, ruta óptima y comunicación constante. Tú solo disfruta el viaje.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <h2>¿Listo para cotizar? <br><em>WhatsApp es la forma más rápida.</em></h2>
+    <div class="cta-buttons">
+      <a href="https://wa.me/525534183298?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20un%20servicio%20de%20transporte." 
+         class="btn-wa-cta" target="_blank" rel="noopener">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Abrir WhatsApp ahora
+      </a>
+      <a href="tel:+525534183298" class="btn-call-cta">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Llamar: 55 3418 3298
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FORM SECTION -->
+<section class="form-section" id="cotizacion">
+  <div class="form-section-inner">
+    <div class="form-info">
+      <div class="section-label">Cotización</div>
+      <h2 class="section-title">¿Prefieres que<br>nosotros <em>te contactemos?</em></h2>
+      <p>Llena el formulario con los detalles de tu servicio y uno de nuestros asesores se comunicará contigo en menos de 30 minutos durante horario hábil.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-dot">📞</div>
+          <a href="tel:+525534183298">55 3418 3298 · Lunes a viernes, 9:00–17:00 hrs</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-dot">💬</div>
+          <a href="https://wa.me/525534183298" target="_blank">WhatsApp disponible todos los días</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-dot">📧</div>
+          <a href="mailto:hola@marmotour.mx">hola@marmotour.mx</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-dot">📍</div>
+          <span>Insurgentes Sur 3493, Villa Olímpica, Tlalpan, CDMX</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card-big">
+      <div class="card-title">Solicitar cotización</div>
+      <p class="card-sub">Respuesta en menos de 30 minutos</p>
+      <form id="mainForm" onsubmit="submitForm(event, 'mainSuccess')">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre completo" required>
+          </div>
+          <div class="form-group">
+            <label>Empresa (opcional)</label>
+            <input type="text" placeholder="Nombre de empresa">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Teléfono / WhatsApp</label>
+            <input type="tel" placeholder="55 0000 0000" required>
+          </div>
+          <div class="form-group">
+            <label>Correo electrónico</label>
+            <input type="email" placeholder="tu@correo.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Tipo de servicio</label>
+          <select required>
+            <option value="" disabled selected>Selecciona el servicio que necesitas</option>
+            <option>Traslado al aeropuerto (AICM o AIFA)</option>
+            <option>Transporte ejecutivo / personal VIP</option>
+            <option>Servicio corporativo recurrente</option>
+            <option>Turismo / Escapada de fin de semana</option>
+            <option>Concierto o festival</option>
+            <option>Evento o boda</option>
+            <option>Gobierno / Institución pública</option>
+            <option>Maratón / Deporte</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Origen</label>
+            <input type="text" placeholder="¿Desde dónde?">
+          </div>
+          <div class="form-group">
+            <label>Destino</label>
+            <input type="text" placeholder="¿A dónde vas?">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Fecha aproximada y número de personas</label>
+          <textarea placeholder="Ej: 15 de mayo, somos 6 personas, necesitamos ir a Teotihuacán y regresar el mismo día."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">
+          Enviar solicitud de cotización →
+        </button>
+        <div class="success-msg" id="mainSuccess">
+          ✓ ¡Solicitud enviada! Te contactaremos muy pronto. También puedes escribirnos por WhatsApp si lo prefieres.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo-mark">🦫</div>
+      <div>
+        <div class="footer-name">Marmotour</div>
+        <div class="footer-tagline">Luxury Private Transportation</div>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="https://marmotour.mx/servicios">Servicios</a>
+      <a href="https://marmotour.mx/rutas-populares">Rutas</a>
+      <a href="https://marmotour.mx/flota">Flota</a>
+      <a href="https://marmotour.mx/acerca-de">Acerca de</a>
+      <a href="https://marmotour.mx/preguntas-frecuentes">FAQ</a>
+      <a href="https://marmotour.mx/aviso-de-privacidad">Aviso de Privacidad</a>
+    </div>
+    <div class="footer-copy">
+      © 2025 Transportes Ejecutivos Marmotour, S.A.S. de C.V.<br>
+      Insurgentes Sur 3493, Villa Olímpica, Tlalpan, CDMX
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY WHATSAPP -->
+<a href="https://wa.me/525534183298?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20un%20servicio%20de%20transporte." 
+   class="sticky-wa" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <div class="sticky-wa-icon">
+    <svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </div>
+  <span class="sticky-wa-text">Cotizar por WhatsApp</span>
+</a>
+
+<script>
+  function submitForm(e, successId) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    const success = document.getElementById(successId);
+    
+    btn.textContent = 'Enviando…';
+    btn.disabled = true;
+    
+    // Simulate API delay — replace with actual endpoint
+    setTimeout(() => {
+      form.reset();
+      btn.style.display = 'none';
+      success.style.display = 'block';
+    }, 800);
+  }
+
+  // Shrink nav on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 60) {
+      nav.style.padding = '10px 40px';
+    } else {
+      nav.style.padding = '14px 40px';
+    }
+  });
+</script>
+</body>
+</html>
